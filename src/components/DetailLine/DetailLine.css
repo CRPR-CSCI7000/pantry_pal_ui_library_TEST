@@ -1,0 +1,35 @@
+.pp-detail-line {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.pp-title-container {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-right: 8px;
+}
+
+.pp-chevron-icon {
+  margin-right: 4px;
+  font-size: 20px;
+  color: var(--coffee-medium);
+  transition: transform 0.3s ease;
+}
+
+.pp-chevron-icon.pp-rotated {
+  transform: rotate(-90deg);
+}
+
+.pp-detail-line span {
+  font-weight: bold;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: var(--coffee-dark);
+}
+
+.pp-line {
+  flex-grow: 1;
+  border-bottom: 1px solid var(--coffee-light);
+}

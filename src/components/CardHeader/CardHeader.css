@@ -1,0 +1,21 @@
+.pp-card-header {
+  display: flex;
+  white-space: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  padding: 0.75rem 1rem;
+  border-bottom: 2px solid var(--bg-secondary);
+  color: var(--coffee-dark);
+}
+
+.pp-header-text {
+  flex: 1;
+  text-align: left;
+  font-size: 1.6rem;
+}
+
+.pp-header-buttons {
+  display: flex;
+  gap: 0.5rem;
+}

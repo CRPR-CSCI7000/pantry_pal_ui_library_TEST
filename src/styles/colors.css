@@ -1,0 +1,26 @@
+/* @CRPR-CSCI7000/ui-library — global CSS variables.
+   Consumers must import this file once in their app entry point:
+   import '@CRPR-CSCI7000/ui-library/dist/colors.css';
+*/
+:root {
+  --coffee-dark: #3a2618;
+  --coffee-medium: #6f4e37;
+  --coffee-light: #9b7653;
+  --coffee-cream: #e6d2b5;
+  --coffee-espresso: #241811;
+
+  --bg-primary: #f8f4e9;
+  --bg-secondary: #efe6d5;
+
+  --text-primary: #241811;
+  --text-secondary: #6f4e37;
+  --text-light: #f8f4e9;
+
+  --accent-primary: #c87d55;
+  --accent-secondary: #a67b5b;
+
+  --success: #4a7c59;
+  --warning: #d4ac6e;
+  --error: #a64b2a;
+  --info: #6a8caf;
+}
