@@ -1,6 +1,6 @@
 {
   "name": "@CRPR-CSCI7000/ui-library",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Shared React component library for PantryPal",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
