@@ -27,7 +27,7 @@ export default {
     peerDepsExternal(),
     resolve({ extensions: [".js", ".jsx"] }),
     commonjs(),
-    postcss({ modules: false, extract: false, inject: true }),
+    postcss({ modules: false, extract: true, inject: true }),
     babel({
       babelHelpers: "bundled",
       extensions: [".js", ".jsx"],

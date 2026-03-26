@@ -4,6 +4,7 @@
  * Public API — all components exported from here.
  * Consumers should import from '@CRPR-CSCI7000/ui-library', never from deep paths.
  */
+import "./styles/colors.css";
 
 // Components
 export { default as Button } from "./components/Button/Button";
