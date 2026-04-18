@@ -15,7 +15,7 @@ import "./ProductGrid.css";
 const ProductCard = ({ item, onItemClick, onDelete }) => {
   const handleDeleteClick = (e) => {
     e.stopPropagation();
-    if (onDelete) onDelete(item);
+    if (onDelete) onDelete(item.id);
   };
 
   return (
