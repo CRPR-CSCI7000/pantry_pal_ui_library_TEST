@@ -30,4 +30,8 @@ export const COLORS = {
   warning: "#D4AC6E",
   error: "#A64B2A",
   info: "#6A8CAF",
+
+  // Surface and border tokens
+  surfaceRaised: "#FFFFFF",
+  borderSubtle: "#D6C9B0",
 };

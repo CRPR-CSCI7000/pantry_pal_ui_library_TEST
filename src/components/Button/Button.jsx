@@ -5,21 +5,32 @@
  *   children    - button label
  *   onClick     - click handler
  *   variant     - "contained" | "outlined" | "accent"  (default: "contained")
+ *   size        - "sm" | "md" | "lg"  (default: "md")
  *   hasShadow   - boolean (default: false)
  *   disabled    - boolean (default: false)
+ *   ariaLabel   - string (optional, for icon-only buttons)
  */
 import React from "react";
 import { Button as MuiButton } from "@mui/material";
 import { motion, AnimatePresence } from "framer-motion";
+
+const SIZE_MAP = {
+  sm: { padding: "0.25rem 0.75rem", fontSize: "0.8rem" },
+  md: { padding: "0.5rem 1rem", fontSize: "1rem" },
+  lg: { padding: "0.75rem 1.5rem", fontSize: "1.1rem" },
+};
 
 const Button = ({
   children,
   hasShadow = false,
   onClick,
   variant = "contained",
+  size = "md",
   disabled = false,
+  ariaLabel,
 }) => {
   const [isPressed, setIsPressed] = React.useState(false);
+  const sizeStyle = SIZE_MAP[size] || SIZE_MAP.md;
 
   const buttonVariants = {
     initial: {
@@ -49,7 +60,7 @@ const Button = ({
   };
 
   const common = {
-    padding: "0.5rem 1rem",
+    ...sizeStyle,
     borderRadius: "0.5rem",
     transition: "background-color 0.3s",
     textTransform: "none",
@@ -96,6 +107,7 @@ const Button = ({
       variant={variant === "accent" ? "contained" : variant}
       disabled={disabled}
       disableElevation={!hasShadow}
+      aria-label={ariaLabel}
       sx={styleMap[variant] || styleMap.contained}
       component={motion.button}
       initial="initial"
