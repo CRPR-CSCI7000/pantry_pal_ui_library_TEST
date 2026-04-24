@@ -2,15 +2,11 @@
  * Modal component — wraps MUI Dialog, driven by Redux modal state.
  *
  * Props:
- *   modal_id  - string key in modalState redux slice
- *   title     - dialog title string
- *   children  - dialog body
- *   buttons   - array of { text, onClick, variant }
- *   style     - optional style overrides for the Paper
- *
- * Peer dependency: react-redux store must contain a `modalState` slice
- * with shape { [modal_id]: boolean }.
- * Use the `toggleModal(modal_id)` action to open/close.
+ *   modal_id      - string key in modalState redux slice
+ *   title         - dialog title string
+ *   children      - dialog body
+ *   footerButtons - array of { text, onClick, variant }  ← renamed from 'buttons'
+ *   style         - optional style overrides for the Paper
  */
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
@@ -23,7 +19,7 @@ import {
   Button,
 } from "@mui/material";
 
-const Modal = ({ modal_id, title, children, buttons = [], style }) => {
+const Modal = ({ modal_id, title, children, footerButtons = [], style }) => {
   const dispatch = useDispatch();
   const isOpen = useSelector((state) => state.modalState[modal_id]);
 
@@ -57,7 +53,7 @@ const Modal = ({ modal_id, title, children, buttons = [], style }) => {
       </DialogContent>
       <Divider sx={{ marginBottom: 1 }} />
       <DialogActions sx={{ justifyContent: "flex-end", flexShrink: 0 }}>
-        {buttons.map(({ text, onClick, variant }, index) => (
+        {footerButtons.map(({ text, onClick, variant }, index) => (
           <Button
             key={index}
             variant={variant}
